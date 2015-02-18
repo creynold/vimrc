@@ -15,6 +15,12 @@ set textwidth=80
 set colorcolumn=80
 syntax on
 
+" Define STX filetypes
+au BufNewFile,BufRead *.es set filetype=c
+au BufNewFile,BufRead *.ts set filetype=c
+au BufNewFile,BufRead *.gls set filetype=c
+au BufNewFile,BufRead *.lls set filetype=c
+
 " Turn on line numbering/relative numbering
 set relativenumber
 set number
@@ -35,4 +41,5 @@ nnoremap <leader>q :q<cr>
 " Plugin shortcuts
 nnoremap <c-n> :NERDTreeToggle<cr>
 nnoremap <leader>l :TagbarToggle<cr>
+
 
