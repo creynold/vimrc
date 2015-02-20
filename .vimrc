@@ -1,6 +1,6 @@
-" Pathogen settings
+"" Pathogen settings
 call pathogen#infect()
-filetype plugin indent on
+filetype plugin on
 
 Helptags
 
@@ -14,6 +14,11 @@ colorscheme badwolf
 set textwidth=80
 set colorcolumn=80
 syntax on
+set shiftwidth=2
+set tabstop=3
+set autoindent
+set expandtab
+set smartindent
 
 " Define STX filetypes
 au BufNewFile,BufRead *.es set filetype=c
@@ -40,6 +45,11 @@ nnoremap <leader>q :q<cr>
 
 " Plugin shortcuts
 nnoremap <c-n> :NERDTreeToggle<cr>
+nnoremap <c-k> <c-w>k
+nnoremap <c-j> <c-w>j
+nnoremap <c-l> <c-w>l
+nnoremap <c-h> <c-w>h
+
 nnoremap <leader>l :TagbarToggle<cr>
 
 
