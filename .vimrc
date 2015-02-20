@@ -1,8 +1,14 @@
+" kind of ugly way to stop loading indent files for these STX types
+let blacklist = ['ts','es','gls','lls']
+
 "" Pathogen settings
 call pathogen#infect()
 filetype plugin on
+au BufNewFile,BufRead * if index(blacklist, &ft) < 0 | filetype indent on
 
 Helptags
+
+set nocompatible
 
 " Change leader
 let mapleader = ","
@@ -18,15 +24,15 @@ set shiftwidth=2
 set tabstop=3
 set autoindent
 set expandtab
-set smartindent
 
 " Define STX filetypes
 au BufNewFile,BufRead *.es set filetype=c
 au BufNewFile,BufRead *.ts set filetype=c
 au BufNewFile,BufRead *.gls set filetype=c
 au BufNewFile,BufRead *.lls set filetype=c
+au FileType c setlocal smartindent
+au FileType c filetype indent off
 
-" Turn on line numbering/relative numbering
 set relativenumber
 set number
 set ruler
