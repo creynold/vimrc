@@ -21,7 +21,7 @@ set textwidth=80
 set colorcolumn=80
 syntax on
 set shiftwidth=2
-set tabstop=3
+set tabstop=2
 set autoindent
 set expandtab
 
@@ -59,3 +59,9 @@ nnoremap <c-h> <c-w>h
 nnoremap <leader>l :TagbarToggle<cr>
 
 
+" Vimscript file settings ---------- {{{
+augroup filetype_vim
+  autocmd!
+  autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
