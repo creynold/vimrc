@@ -17,13 +17,15 @@ let mapleader = ","
 colorscheme badwolf
 
 " Code settings
-set textwidth=80
-set colorcolumn=80
+set textwidth=100
+set colorcolumn=100
 syntax on
 set shiftwidth=2
-set tabstop=3
+set tabstop=2
 set autoindent
 set expandtab
+set nowrap
+set textwidth=0 wrapmargin=0
 
 " Define STX filetypes
 au BufNewFile,BufRead *.es set filetype=c
@@ -39,7 +41,6 @@ set ruler
 
 " Make it so jk returns to normal mode
 inoremap jk <esc>
-vnoremap jk <esc>
 
 " Easy editing/sourcing of vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
@@ -48,6 +49,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " Useful shortcuts
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
+nnoremap <leader><space> bi<space><esc>ea<space><esc>
 
 " Plugin shortcuts
 nnoremap <c-n> :NERDTreeToggle<cr>
