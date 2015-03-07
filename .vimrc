@@ -61,3 +61,9 @@ nnoremap <c-h> <c-w>h
 nnoremap <leader>l :TagbarToggle<cr>
 
 
+" Vimscript file settings ---------- {{{
+augroup filetype_vim
+  autocmd!
+  autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
