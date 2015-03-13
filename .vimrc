@@ -21,7 +21,8 @@ set textwidth=100
 set colorcolumn=100
 syntax on
 set shiftwidth=4
-set tabstop=4
+set tabstop=8
+set softtabstop=4
 set autoindent
 set expandtab
 set nowrap
