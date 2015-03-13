@@ -20,8 +20,8 @@ colorscheme badwolf
 set textwidth=100
 set colorcolumn=100
 syntax on
-set shiftwidth=2
-set tabstop=2
+set shiftwidth=4
+set tabstop=4
 set autoindent
 set expandtab
 set nowrap
