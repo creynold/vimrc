@@ -68,3 +68,10 @@ augroup filetype_vim
   autocmd FileType vim setlocal foldmethod=marker
 augroup END
 " }}}
+
+" Python file settings ---------- {{{
+augroup filetype_python
+  autocmd!
+  autocmd FileType python setlocal foldmethod=indent
+  autocmd FileType python set foldlevel=99
+" }}}
