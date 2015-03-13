@@ -23,7 +23,7 @@ syntax on
 set shiftwidth=4
 set tabstop=8
 set softtabstop=4
-set autoindent
+"set autoindent
 set expandtab
 set nowrap
 set textwidth=0 wrapmargin=0
@@ -60,6 +60,8 @@ nnoremap <c-l> <c-w>l
 nnoremap <c-h> <c-w>h
 
 nnoremap <leader>l :TagbarToggle<cr>
+nnoremap <leader>td :TaskList<cr>
+nnoremap <leader>g :GundoToggle<cr>
 
 
 " Vimscript file settings ---------- {{{
