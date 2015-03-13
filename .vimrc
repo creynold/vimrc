@@ -2,11 +2,11 @@
 let blacklist = ['ts','es','gls','lls']
 
 "" Pathogen settings
+filetype off
 call pathogen#infect()
+call pathogen#helptags()
 filetype plugin on
 au BufNewFile,BufRead * if index(blacklist, &ft) < 0 | filetype indent on
-
-Helptags
 
 set nocompatible
 
@@ -17,12 +17,12 @@ let mapleader = ","
 colorscheme badwolf
 
 " Code settings
+syntax on
 set textwidth=100
 set colorcolumn=100
-syntax on
-set shiftwidth=4
 set tabstop=8
 set softtabstop=4
+set shiftwidth=4
 "set autoindent
 set expandtab
 set nowrap
@@ -60,7 +60,7 @@ nnoremap <c-l> <c-w>l
 nnoremap <c-h> <c-w>h
 
 nnoremap <leader>l :TagbarToggle<cr>
-nnoremap <leader>td :TaskList<cr>
+nnoremap <leader>td <Plug>TaskList
 nnoremap <leader>g :GundoToggle<cr>
 
 
