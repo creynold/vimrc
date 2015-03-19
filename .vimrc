@@ -1,12 +1,9 @@
-" kind of ugly way to stop loading indent files for these STX types
-let blacklist = ['ts','es','gls','lls']
 
 "" Pathogen settings
 filetype off
 call pathogen#infect()
 call pathogen#helptags()
-filetype plugin on
-au BufNewFile,BufRead * if index(blacklist, &ft) < 0 | filetype indent on
+filetype plugin indent on
 
 set nocompatible
 
@@ -71,9 +68,24 @@ augroup filetype_vim
 augroup END
 " }}}
 
+" Markdown file settings ---------- {{{
+augroup markdown
+  autocmd!
+  autocmd BufNewFile,BufRead *.md, setlocal filetype=ghmarkdown
+" }}}
+
 " Python file settings ---------- {{{
 augroup filetype_python
   autocmd!
   autocmd FileType python setlocal foldmethod=indent
   autocmd FileType python set foldlevel=99
 " }}}
+
+" STX file settings ---------- {{{
+augroup stx
+  autocmd!
+  " kind of ugly way to stop loading indent files for these STX types
+  let blacklist = ['ts','es','gls','lls']
+  autocmd BufNewFile,BufRead * if index(blacklist, &ft) > 0 | filetype indent off
+" }}}
+
