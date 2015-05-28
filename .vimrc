@@ -5,8 +5,8 @@ let blacklist = ['ts','es','gls','lls']
 filetype off
 call pathogen#infect()
 call pathogen#helptags()
-filetype plugin on
-au BufNewFile,BufRead * if index(blacklist, &ft) < 0 | filetype indent on
+filetype plugin indent on
+au BufNewFile,BufRead * if index(blacklist, &ft) > 0 | filetype indent off
 
 set nocompatible
 
@@ -23,18 +23,18 @@ set colorcolumn=100
 set tabstop=8
 set softtabstop=4
 set shiftwidth=4
-"set autoindent
+set autoindent
 set expandtab
 set nowrap
 set textwidth=0 wrapmargin=0
 
 " Define STX filetypes
-au BufNewFile,BufRead *.es set filetype=c
-au BufNewFile,BufRead *.ts set filetype=c
-au BufNewFile,BufRead *.gls set filetype=c
-au BufNewFile,BufRead *.lls set filetype=c
-au FileType c setlocal smartindent
-au FileType c filetype indent off
+"au BufNewFile,BufRead *.es set filetype=c
+"au BufNewFile,BufRead *.ts set filetype=c
+"au BufNewFile,BufRead *.gls set filetype=c
+"au BufNewFile,BufRead *.lls set filetype=c
+"au FileType c setlocal smartindent
+"au FileType c filetype indent off
 
 set relativenumber
 set number
@@ -62,6 +62,8 @@ nnoremap <c-h> <c-w>h
 nnoremap <leader>l :TagbarToggle<cr>
 nnoremap <leader>td <Plug>TaskList
 nnoremap <leader>g :GundoToggle<cr>
+
+let g:pymode_rope = 0
 
 
 " Vimscript file settings ---------- {{{
