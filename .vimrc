@@ -10,9 +10,6 @@ set nocompatible
 " Change leader
 let mapleader = ","
 
-" Set color scheme
-colorscheme badwolf
-
 " Code settings
 syntax on
 set textwidth=100
@@ -43,6 +40,7 @@ inoremap jk <esc>
 " Easy editing/sourcing of vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>d :Dox<cr>
 
 " Useful shortcuts
 nnoremap <leader>w :w<cr>
@@ -61,6 +59,16 @@ nnoremap <leader>td <Plug>TaskList
 nnoremap <leader>g :GundoToggle<cr>
 
 let g:pymode_rope = 0
+
+" Set default GUI font to Inconsolata -- {{{
+if has('gui_running')
+    set guifont=Inconsolata\ Medium\ 12
+    " Set color scheme
+    colorscheme badwolf
+else
+    colorscheme molokai
+endif
+" }}}
 
 
 " Vimscript file settings ---------- {{{
