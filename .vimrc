@@ -12,11 +12,11 @@ let mapleader = ","
 
 " Code settings
 syntax on
-set textwidth=100
-set colorcolumn=100
-set tabstop=8
+set textwidth=80
+set colorcolumn=80
+"set tabstop=8
 set softtabstop=4
-set shiftwidth=4
+"set shiftwidth=4
 set autoindent
 set expandtab
 set nowrap
@@ -84,11 +84,37 @@ augroup markdown
   autocmd BufNewFile,BufRead *.md, setlocal filetype=ghmarkdown
 " }}}
 
+" HTML file settings ----------- {{{
+augroup html
+  autocmd!
+  autocmd BufNewFile,BufRead *.html, setlocal shiftwidth=2
+" }}}
+
 " Python file settings ---------- {{{
 augroup filetype_python
   autocmd!
   autocmd FileType python setlocal foldmethod=indent
   autocmd FileType python set foldlevel=99
+" }}}
+
+" CPP file settings ---------- {{{
+augroup filetype_cpp
+  autocmd!
+  autocmd FileType cpp setlocal foldmethod=indent
+  autocmd FileType cpp set foldlevel=99
+  autocmd FileType cpp set shiftwidth=4
+" }}}
+
+" CSS file settings ---------- {{{
+augroup filetype_css
+  autocmd!
+  autocmd FileType cpp set shiftwidth=2
+" }}}
+
+" LESS file settings ---------- {{{
+augroup filetype_css
+  autocmd!
+  autocmd FileType less set shiftwidth=2
 " }}}
 
 " STX file settings ---------- {{{
