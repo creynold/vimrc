@@ -22,14 +22,6 @@ set expandtab
 set nowrap
 set textwidth=0 wrapmargin=0
 
-" Define STX filetypes
-"au BufNewFile,BufRead *.es set filetype=c
-"au BufNewFile,BufRead *.ts set filetype=c
-"au BufNewFile,BufRead *.gls set filetype=c
-"au BufNewFile,BufRead *.lls set filetype=c
-"au FileType c setlocal smartindent
-"au FileType c filetype indent off
-
 set relativenumber
 set number
 set ruler
@@ -116,12 +108,3 @@ augroup filetype_css
   autocmd!
   autocmd FileType less set shiftwidth=2
 " }}}
-
-" STX file settings ---------- {{{
-augroup stx
-  autocmd!
-  " kind of ugly way to stop loading indent files for these STX types
-  let blacklist = ['ts','es','gls','lls']
-  autocmd BufNewFile,BufRead * if index(blacklist, &ft) > 0 | filetype indent off
-" }}}
-
