@@ -1,3 +1,6 @@
+if &shell =~# 'fish$'
+    set shell=sh
+endif
 
 "" Pathogen settings
 filetype off
@@ -11,16 +14,17 @@ set nocompatible
 let mapleader = ","
 
 " Code settings
-syntax on
-set textwidth=80
-set colorcolumn=80
-"set tabstop=8
+syntax enable
+set tabstop=8
+set shiftwidth=4
 set softtabstop=4
-"set shiftwidth=4
-set autoindent
 set expandtab
+set textwidth=80
+set formatoptions=qrn1j
+set colorcolumn=+1
+
+set autoindent
 set nowrap
-set textwidth=0 wrapmargin=0
 
 set relativenumber
 set number
@@ -34,10 +38,7 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>d :Dox<cr>
 
-" Useful shortcuts
-nnoremap <leader>w :w<cr>
-nnoremap <leader>q :q<cr>
-nnoremap <leader><space> bi<space><esc>ea<space><esc>
+nnoremap <cr> o<esc>
 
 " Plugin shortcuts
 nnoremap <c-n> :NERDTreeToggle<cr>
@@ -49,19 +50,12 @@ nnoremap <c-h> <c-w>h
 nnoremap <leader>l :TagbarToggle<cr>
 nnoremap <leader>td <Plug>TaskList
 nnoremap <leader>g :GundoToggle<cr>
+nnoremap <c-p> "+p
+nnoremap <c-y> "+y
 
 let g:pymode_rope = 0
 
-" Set default GUI font to Inconsolata -- {{{
-if has('gui_running')
-    set guifont=Inconsolata\ Medium\ 12
-    " Set color scheme
-    colorscheme badwolf
-else
-    colorscheme molokai
-endif
-" }}}
-
+colorscheme badwolf
 
 " Vimscript file settings ---------- {{{
 augroup filetype_vim
@@ -107,4 +101,15 @@ augroup filetype_css
 augroup filetype_css
   autocmd!
   autocmd FileType less set shiftwidth=2
+" }}}
+
+" Clojure settings ----- {{{
+augroup filetype_clojure
+  au!
+
+  au FileType clojure compiler clojure
+  au FileType clojure RainbowParenthesesActivate
+  au syntax clojure RainbowParenthesesLoadRound
+  au syntax clojure RainbowParenthesesLoadSquare
+  au syntax clojure RainbowParenthesesLoadBraces
 " }}}
