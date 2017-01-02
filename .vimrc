@@ -20,7 +20,6 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set textwidth=80
-set formatoptions=qrn1j
 set colorcolumn=+1
 
 set autoindent
